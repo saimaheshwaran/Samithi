@@ -17,8 +17,8 @@ import java.util.Objects;
 public class Contact implements Serializable {
 
     @Id
-    @SequenceGenerator(name="contactus_seq_gen", sequenceName = "contact_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contactus_seq_gen")
+    @SequenceGenerator(name="contact_seq_gen", sequenceName = "contact_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contact_seq_gen")
     @Setter(AccessLevel.NONE)
     private Integer id;
 
