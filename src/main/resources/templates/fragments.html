@@ -1,0 +1,149 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="headTag (title)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[[${title}]]</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/all.css}"/>
+</head>
+
+<div th:fragment="navTag">
+    <img src="/img/banner.jpg" class="img-fluid" alt="...">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Love All Serve All</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Devotion
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Devotional Songs</a></li>
+                            <li><a class="dropdown-item" href="#">Devotional Prayers</a></li>
+                            <!--<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Service
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Service Activities</a></li>
+                            <li><a class="dropdown-item" href="#">Service Schedule</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Education
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">SSE Activities</a></li>
+                            <li><a class="dropdown-item" href="#">SSE Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Youth
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Youth Calendar</a></li>
+                            <li><a class="dropdown-item" href="#">Youth Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                        <!--<a class="nav-link disabled" aria-disabled="true">Disabled</a>-->
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-outline-info btn-sm dropdown-toggle" id="dropdownLanguage"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                        <a href="#" class="dropdown-item">English</a>
+                        <a href="#" class="dropdown-item">Tamil</a>
+                    </div>
+                </div>
+                <!--<form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>-->
+            </div>
+        </div>
+    </nav>
+    <br>
+</div>
+
+<div th:fragment="footerTag">
+    <br>
+    <footer class="small bg-light">
+        <div class="container py-3 py-sm-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h6>Quick links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <!--<li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Team</a></li>-->
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h6>Information</h6>
+                    <ul class="list-unstyled">
+                        <!--<li><a href="#0">Legal information</a></li>
+                        <li><a href="#0">Job opportunities</a></li>-->
+                        <li><a href="#0">Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h6>Follow us</h6>
+                    <ul class="list-unstyled">
+                        <!--<li><a href="#0"><i class="fab fa-fw fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#0"><i class="fab fa-fw fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#0"><i class="fab fa-fw fa-twitter"></i> Twitter</a></li>-->
+                        <li><a href="#0"><i class="fab fa-fw fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h6>Our location</h6>
+                    <address>
+                        <!--<strong>Service Center</strong><br>-->
+                        Service area Street<br>
+                        Herambavaram - 600011<br>
+                        <!--<i class="fas fa-fw fa-phone"></i> <a href="tel:+91234567890">+91-4567890761</a><br>
+                        <i class="fas fa-fw fa-envelope"></i> <a href="mailto:info@domain.com">info@domain.com</a>-->
+                    </address>
+                </div>
+            </div>
+            <ul class="list-inline mt-2 mb-0 text-center">
+                <li class="list-inline-item">&copy; 2024 Company Name</li>
+                <li class="list-inline-item">All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script th:fragment="jsTag" th:src="@{/js/bootstrap.bundle.js}"></script>
+
+</html>

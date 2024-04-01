@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments :: headTag ('Contact List')}"></head>
+<body class="container">
+<nav th:replace="~{fragments :: navTag}"></nav>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="contact : ${contacts}">
+            <td th:text="${contact.name}"></td>
+            <td th:text="${contact.subject}"></td>
+            <td th:text="${contact.message}"></td>
+            <td th:text="${contact.email}"></td>
+            <td th:text="${contact.telephone}"></td>
+            <td th:text="${contact.createdAt}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="~{fragments :: footerTag}"></div>
+<script th:replace="~{fragments :: jsTag}"></script>
+</body>
+</html>

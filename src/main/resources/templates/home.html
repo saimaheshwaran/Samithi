@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{fragments :: headTag ('Home Page')}"></head>
+<body class="container">
+<nav th:replace="~{fragments :: navTag}"></nav>
+
+<div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-touch="true" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <iframe class="d-block w-100" alt="..."
+                    width="560" height="400" src="https://www.youtube.com/embed/l2PCtFSrca8?si=dGumiIRR8jLVc42j"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            <!--                    <img src="..." class="d-block w-100" alt="...">-->
+        </div>
+        <div class="carousel-item">
+            <iframe class="d-block w-100" alt="..."
+                    width="560" height="400" src="https://www.youtube.com/embed/JIZwA_-95hw?si=U1q7xCh7MI_oZQB7"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
+        <div class="carousel-item">
+            <iframe class="d-block w-100" alt="..."
+                    width="560" height="400" src="https://www.youtube.com/embed/gfKy4UsahoQ?si=8qeBKL0mcbE_yHgH"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div th:replace="~{fragments :: footerTag}"></div>
+<script th:replace="~{fragments :: jsTag}"></script>
+</body>
+</html>
