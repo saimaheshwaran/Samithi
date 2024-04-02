@@ -2,13 +2,9 @@ package org.sai.samithi.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.Hibernate;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.Objects;
 
 @Builder
 @Getter @Setter @ToString
@@ -38,6 +34,6 @@ public class Contact {
     private String message;
 
     @CreatedDate
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
 }

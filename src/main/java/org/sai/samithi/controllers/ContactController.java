@@ -5,7 +5,10 @@ import org.sai.samithi.services.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ContactController {
@@ -31,8 +34,9 @@ public class ContactController {
     }
 
     @GetMapping("/contact/list")
-    public String getContacts(Model model) {
-        model.addAttribute("contacts", contactService.getAll());
+    public String getContacts(@RequestParam(defaultValue = "0") int page, Model model) {
+        model.addAttribute("contactPage",
+                contactService.contactPageRequest(page, 20));
         return "contact/list";
     }
 
