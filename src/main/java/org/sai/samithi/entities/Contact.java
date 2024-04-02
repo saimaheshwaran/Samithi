@@ -14,7 +14,7 @@ import java.util.Objects;
 @Getter @Setter @ToString
 @NoArgsConstructor @AllArgsConstructor
 @Entity
-public class Contact implements Serializable {
+public class Contact {
 
     @Id
     @SequenceGenerator(name="contact_seq_gen", sequenceName = "contact_seq", allocationSize = 1)
@@ -39,18 +39,5 @@ public class Contact implements Serializable {
 
     @CreatedDate
     private LocalDateTime createdAt;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Contact contact = (Contact) o;
-        return getId() != null && Objects.equals(getId(), contact.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 
 }
