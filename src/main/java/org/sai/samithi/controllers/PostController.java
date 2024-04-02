@@ -24,7 +24,7 @@ public class PostController {
     @GetMapping("/posts/list")
     public String getPosts(@RequestParam(defaultValue = "0") int page, Model model) {
         model.addAttribute("postsPage",
-                postService.postPageRequest(page, 20));
+                postService.postPageRequest(page, 15));
         return "posts/list";
     }
 

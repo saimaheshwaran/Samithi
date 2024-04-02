@@ -23,7 +23,6 @@ public class Post {
     @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
     private Date publishedOn;
 
     @Column(nullable = false)

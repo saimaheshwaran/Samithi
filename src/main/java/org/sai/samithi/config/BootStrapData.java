@@ -41,21 +41,21 @@ public class BootStrapData implements CommandLineRunner {
 
     void loadPostsEntities() {
         Post post = new Post();
-        post.setName("Shivarathri");
-        post.setDescription("Celebration of Shivathri");
-        post.setUrl("https://www.youtube.com/embed/l2PCtFSrca8?si=dGumiIRR8jLVc42j");
+        post.setName("shiva");
+        post.setDescription("Celebration of NavaShivathri");
+        post.setUrl("shiva");
         postService.add(post);
 
         post = new Post();
-        post.setName("Gurupoornima");
-        post.setDescription("Celebration of Gurupoornima");
-        post.setUrl("https://www.youtube.com/embed/JIZwA_-95hw?si=U1q7xCh7MI_oZQB7");
+        post.setName("AsthaRathri");
+        post.setDescription("Celebration of AsthaRathri");
+        post.setUrl("durgi");
         postService.add(post);
 
         post = new Post();
-        post.setName("Sankranthi");
+        post.setName("Aditya");
         post.setDescription("Celebration of Sankranthi");
-        post.setUrl("https://www.youtube.com/embed/gfKy4UsahoQ?si=8qeBKL0mcbE_yHgH");
+        post.setUrl("surya");
         postService.add(post);
     }
 }

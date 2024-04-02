@@ -36,7 +36,7 @@ public class ContactController {
     @GetMapping("/contact/list")
     public String getContacts(@RequestParam(defaultValue = "0") int page, Model model) {
         model.addAttribute("contactPage",
-                contactService.contactPageRequest(page, 20));
+                contactService.contactPageRequest(page, 10));
         return "contact/list";
     }
 
