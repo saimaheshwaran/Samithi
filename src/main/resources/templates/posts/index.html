@@ -9,7 +9,7 @@
         <b>Recent Posts</b>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3" th:each="post : ${postsPage.content}">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-3" th:each="post : ${postPage.content}">
             <div class="card">
                 <div class="card-header small text-bg-warning">Published: <span th:text="${#dates.format(post.publishedOn, 'dd-MMM-yyyy')}"></span>
                 </div>
@@ -18,7 +18,7 @@
                     <p class="card-text">[[${post.description}]]</p>
                 </div>
                 <div class="card-footer d-grid">
-                    <a class="btn btn-outline-secondary" th:href="'/posts/' + ${post.url}"><b>Read more</b></a>
+                    <a class="btn btn-outline-secondary" th:href="'/post/' + ${post.url}"><b>Read more</b></a>
                 </div>
             </div>
         </div>
@@ -27,22 +27,22 @@
 <br>
 <nav aria-label="...">
     <ul class="pagination justify-content-center">
-        <li th:class="${postsPage.first} ? 'page-item disabled' : 'page-item'">
-            <a class="page-link" th:href="@{/posts(page=0)}">&laquo;</a>
+        <li th:class="${postPage.first} ? 'page-item disabled' : 'page-item'">
+            <a class="page-link" th:href="@{/post(page=0)}">&laquo;</a>
         </li>
-        <li th:class="${postsPage.hasPrevious()} ? 'page-item' : 'page-item disabled'">
-            <a class="page-link" th:href="@{/posts(page=${postsPage.number - 1})}">Previous</a>
+        <li th:class="${postPage.hasPrevious()} ? 'page-item' : 'page-item disabled'">
+            <a class="page-link" th:href="@{/post(page=${postPage.number - 1})}">Previous</a>
         </li>
-        <li th:each="i : ${#numbers.sequence(postsPage.number - 1, postsPage.number + 1)}"
-            th:class="${postsPage.number == i} ? 'page-item active' : 'page-item'">
-            <a class="page-link" th:if="${i >= 0 and i < postsPage.totalPages}"
-               th:href="@{/posts(page=${i})}" th:text="${i + 1}"></a>
+        <li th:each="i : ${#numbers.sequence(postPage.number - 1, postPage.number + 1)}"
+            th:class="${postPage.number == i} ? 'page-item active' : 'page-item'">
+            <a class="page-link" th:if="${i >= 0 and i < postPage.totalPages}"
+               th:href="@{/post(page=${i})}" th:text="${i + 1}"></a>
         </li>
-        <li th:class="${postsPage.hasNext()} ? 'page-item' : 'page-item disabled'">
-            <a class="page-link" th:href="@{/posts(page=${postsPage.number + 1})}">Next</a>
+        <li th:class="${postPage.hasNext()} ? 'page-item' : 'page-item disabled'">
+            <a class="page-link" th:href="@{/post(page=${postPage.number + 1})}">Next</a>
         </li>
-        <li th:class="${postsPage.last} ? 'page-item disabled' : 'page-item'">
-            <a class="page-link" th:href="@{/posts(page=${postsPage.totalPages - 1})}">&raquo;</a>
+        <li th:class="${postPage.last} ? 'page-item disabled' : 'page-item'">
+            <a class="page-link" th:href="@{/post(page=${postPage.totalPages - 1})}">&raquo;</a>
         </li>
     </ul>
 </nav>

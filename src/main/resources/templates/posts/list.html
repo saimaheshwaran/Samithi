@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="post : ${postsPage.content}">
+    <tr th:each="post : ${postPage.content}">
         <td th:text="${post.url}"></td>
         <td th:text="${post.name}"></td>
         <td th:text="${post.description}"></td>
@@ -27,22 +27,22 @@
 
 <nav aria-label="...">
     <ul class="pagination justify-content-center">
-        <li th:class="${postsPage.first} ? 'page-item disabled' : 'page-item'">
-            <a class="page-link" th:href="@{/posts/list(page=0)}">&laquo;</a>
+        <li th:class="${postPage.first} ? 'page-item disabled' : 'page-item'">
+            <a class="page-link" th:href="@{/post/list(page=0)}">&laquo;</a>
         </li>
-        <li th:class="${postsPage.hasPrevious()} ? 'page-item' : 'page-item disabled'">
-            <a class="page-link" th:href="@{/posts/list(page=${postsPage.number - 1})}">Previous</a>
+        <li th:class="${postPage.hasPrevious()} ? 'page-item' : 'page-item disabled'">
+            <a class="page-link" th:href="@{/post/list(page=${postPage.number - 1})}">Previous</a>
         </li>
-        <li th:each="i : ${#numbers.sequence(postsPage.number - 1, postsPage.number + 1)}"
-            th:class="${postsPage.number == i} ? 'page-item active' : 'page-item'">
-            <a class="page-link" th:if="${i >= 0 and i < postsPage.totalPages}"
-               th:href="@{/posts/list(page=${i})}" th:text="${i + 1}"></a>
+        <li th:each="i : ${#numbers.sequence(postPage.number - 1, postPage.number + 1)}"
+            th:class="${postPage.number == i} ? 'page-item active' : 'page-item'">
+            <a class="page-link" th:if="${i >= 0 and i < postPage.totalPages}"
+               th:href="@{/post/list(page=${i})}" th:text="${i + 1}"></a>
         </li>
-        <li th:class="${postsPage.hasNext()} ? 'page-item' : 'page-item disabled'">
-            <a class="page-link" th:href="@{/posts/list(page=${postsPage.number + 1})}">Next</a>
+        <li th:class="${postPage.hasNext()} ? 'page-item' : 'page-item disabled'">
+            <a class="page-link" th:href="@{/post/list(page=${postPage.number + 1})}">Next</a>
         </li>
-        <li th:class="${postsPage.last} ? 'page-item disabled' : 'page-item'">
-            <a class="page-link" th:href="@{/posts/list(page=${postsPage.totalPages - 1})}">&raquo;</a>
+        <li th:class="${postPage.last} ? 'page-item disabled' : 'page-item'">
+            <a class="page-link" th:href="@{/post/list(page=${postPage.totalPages - 1})}">&raquo;</a>
         </li>
     </ul>
 </nav>

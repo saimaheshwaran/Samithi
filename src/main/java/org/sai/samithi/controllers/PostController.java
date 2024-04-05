@@ -14,21 +14,21 @@ public class PostController {
     @Autowired
     PostService postService;
 
-    @GetMapping("/posts")
+    @GetMapping("/post")
     public String postsPage(@RequestParam(defaultValue = "0") int page, Model model) {
-        model.addAttribute("postsPage",
+        model.addAttribute("postPage",
                 postService.postPageRequest(page, 12));
         return "posts/index";
     }
 
-    @GetMapping("/posts/list")
+    @GetMapping("/post/list")
     public String getPosts(@RequestParam(defaultValue = "0") int page, Model model) {
-        model.addAttribute("postsPage",
+        model.addAttribute("postPage",
                 postService.postPageRequest(page, 15));
         return "posts/list";
     }
 
-    @GetMapping("/posts/{path}")
+    @GetMapping("/post/{path}")
     public String getPost(@PathVariable("path") String path) {
         return "posts/" + path;
     }
