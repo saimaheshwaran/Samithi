@@ -4,7 +4,7 @@ import lombok.*;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Builder
 @Getter @Setter @ToString
@@ -25,6 +25,6 @@ public class Visitor {
     private String url;
 
     @CreatedDate
-    private LocalDateTime visitTime;
+    private Date visitTime;
 
 }

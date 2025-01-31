@@ -19,10 +19,10 @@
     <tbody>
     <tr th:each="visitor : ${visitorPage.content}">
         <td th:text="${visitor.id}"></td>
-        <td th:text="${visitor.ip_address}"></td>
-        <td th:text="${visitor.user_agent}"></td>
+        <td th:text="${visitor.ipAddress}"></td>
+        <td th:text="${visitor.userAgent}"></td>
         <td th:text="${visitor.url}"></td>
-        <td th:text="${#dates.format(visitor.visit_time, 'dd-MMM-yyyy hh:mm:ss')}"></td>
+        <td th:text="${#dates.format(visitor.visitTime, 'dd-MMM-yyyy hh:mm:ss')}"></td>
     </tr>
     </tbody>
 </table>

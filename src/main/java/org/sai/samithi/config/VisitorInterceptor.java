@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Component
 public class VisitorInterceptor implements HandlerInterceptor {
@@ -22,7 +24,7 @@ public class VisitorInterceptor implements HandlerInterceptor {
         visitor.setIpAddress(request.getRemoteAddr());
         visitor.setUserAgent(request.getHeader("User-Agent"));
         visitor.setUrl(request.getRequestURI());
-        visitor.setVisitTime(LocalDateTime.now());
+        visitor.setVisitTime(Date.from(Instant.now()));
 
         visitorRepository.save(visitor);
         return true;
