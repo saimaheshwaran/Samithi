@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments :: headTag ('Visitor List')}"></head>
+<body class="container">
+<nav th:replace="~{fragments :: navTag}"></nav>
+
+<h2>visitor List</h2>
+<br>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>IP Address</th>
+        <th>User Agent</th>
+        <th>URL</th>
+        <th>DateTime</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="visitor : ${visitorPage.content}">
+        <td th:text="${visitor.id}"></td>
+        <td th:text="${visitor.ip_address}"></td>
+        <td th:text="${visitor.user_agent}"></td>
+        <td th:text="${visitor.url}"></td>
+        <td th:text="${#dates.format(visitor.visit_time, 'dd-MMM-yyyy hh:mm:ss')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<nav aria-label="...">
+    <ul class="pagination justify-content-center">
+        <li th:class="${visitorPage.first} ? 'page-item disabled' : 'page-item'">
+            <a class="page-link" th:href="@{/visitor/list(page=0)}">&laquo;</a>
+        </li>
+        <li th:class="${visitorPage.hasPrevious()} ? 'page-item' : 'page-item disabled'">
+            <a class="page-link" th:href="@{/visitor/list(page=${visitorPage.number - 1})}">Previous</a>
+        </li>
+        <li th:each="i : ${#numbers.sequence(visitorPage.number - 1, visitorPage.number + 1)}"
+            th:class="${visitorPage.number == i} ? 'page-item active' : 'page-item'">
+            <a class="page-link" th:if="${i >= 0 and i < visitorPage.totalPages}"
+               th:href="@{/visitor/list(page=${i})}" th:text="${i + 1}" ></a>
+        </li>
+        <li th:class="${visitorPage.hasNext()} ? 'page-item' : 'page-item disabled'">
+            <a class="page-link" th:href="@{/visitor/list(page=${visitorPage.number + 1})}">Next</a>
+        </li>
+        <li th:class="${visitorPage.last} ? 'page-item disabled' : 'page-item'">
+            <a class="page-link" th:href="@{/visitor/list(page=${visitorPage.totalPages - 1})}">&raquo;</a>
+        </li>
+    </ul>
+</nav>
+
+<div th:replace="~{fragments :: footerTag}"></div>
+<script th:replace="~{fragments :: jsTag}"></script>
+</body>
+</html>
