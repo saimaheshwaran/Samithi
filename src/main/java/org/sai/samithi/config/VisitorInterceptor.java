@@ -21,9 +21,12 @@ public class VisitorInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         Visitor visitor = new Visitor();
+        String uri = request.getRequestURI();
+        if(uri.contains("/css/") || uri.contains("/js/") || uri.contains("/img/") || uri.contains("/favicon"))
+            return true;
         visitor.setIpAddress(request.getRemoteAddr());
         visitor.setUserAgent(request.getHeader("User-Agent"));
-        visitor.setUrl(request.getRequestURI());
+        visitor.setUrl(uri);
         visitor.setVisitTime(Date.from(Instant.now()));
 
         visitorRepository.save(visitor);
